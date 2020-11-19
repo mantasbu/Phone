@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="logo">Mantsung</div>
+  <div class="screen">
+    <div class="content" *ngIf="!words else results">
+      {{ mobileNumber }}
+    </div>
+  </div>
+  <div class="functional-buttons">
+    <div class="accept">
+      <button id="btn-call" (click)="call()">Call</button>
+    </div>
+    <div class="ok">
+      <button id="btn-ok" (click)="ok()">OK</button>
+    </div>
+    <div class="decline">
+      <button id="btn-decline" (click)="onDelClicked()">Del</button>
+    </div>
+  </div>
+  <div class="pad">
+    <app-mobile-button [digit]="1" [letters]="'.'" (digitClicked)="includeClickedDigit($event)"></app-mobile-button>
+    <app-mobile-button [digit]="2" [letters]="'abc'" (digitClicked)="includeClickedDigit($event)"></app-mobile-button>
+    <app-mobile-button [digit]="3" [letters]="'def'" (digitClicked)="includeClickedDigit($event)"></app-mobile-button>
+    <app-mobile-button [digit]="4" [letters]="'ghi'" (digitClicked)="includeClickedDigit($event)"></app-mobile-button>
+    <app-mobile-button [digit]="5" [letters]="'jkl'" (digitClicked)="includeClickedDigit($event)"></app-mobile-button>
+    <app-mobile-button [digit]="6" [letters]="'mno'" (digitClicked)="includeClickedDigit($event)"></app-mobile-button>
+    <app-mobile-button [digit]="7" [letters]="'pqrs'" (digitClicked)="includeClickedDigit($event)"></app-mobile-button>
+    <app-mobile-button [digit]="8" [letters]="'tuv'" (digitClicked)="includeClickedDigit($event)"></app-mobile-button>
+    <app-mobile-button [digit]="9" [letters]="'wxyz'" (digitClicked)="includeClickedDigit($event)"></app-mobile-button>
+    <app-mobile-button [letters]="'.'"></app-mobile-button>
+    <app-mobile-button [digit]="0" [letters]="'.'" (digitClicked)="includeClickedDigit($event)"></app-mobile-button>
+    <app-mobile-button [letters]="'.'"></app-mobile-button>
+  </div>
+</div>
+
+<ng-template #results>
+  <div>
+    <div class="words" *ngFor="let word of words">
+      {{ word }}
+    </div>
+  </div>
+</ng-template>

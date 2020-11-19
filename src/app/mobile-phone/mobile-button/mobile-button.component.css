@@ -1,0 +1,7 @@
+button {
+  background-color: brown;
+  height: 70px;
+  width: 80px;
+  border-radius: 5px;
+  font-weight: bold;
+}
